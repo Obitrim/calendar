@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+:root {
+	--bg-color: #eaeaec;
+	--light: white;
+	--sun-col-color: red;
+
+	--padding: 10px;
+	--day-box-size: 30px;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	min-height: 100vh;
+	background-color: var(--bg-color);
+
+	font-family: "Nunito", sans-serif;
+}
+
+/*calendar*/
+.Calendar {
+	background-color: var(--light);
+	border-radius: 5px;
+	box-shadow: 
+		0 5px 15px rgba(0, 0, 0, 0.1),
+		0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.Calendar__Wrapper {
+	margin: 15px;
+}
+
+.Calendar__Header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.Calendar__Month {
+	padding: calc(var(--padding) / 3) var(--padding);
+}
+
+.Calendar__Year {
+	display: flex;
+	align-items: center;
+}
+
+.YearControlBtn {
+	all: initial;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+
+	transition: 0.25s;
+}
+
+.YearControlBtn:hover {
+	cursor: pointer;
+	background-color: var(--bg-color);
+}
+
+.Calendar__Year__Value {
+	padding: 0 calc(var(--padding) / 2);
+}
+
+.Calendar__Days {
+	display: grid;
+	grid-template-columns: repeat(7, auto);
+
+	padding-block: calc(var(--padding));
+}
+
+.Calendar__Month {
+	background-color: var(--bg-color);
+	border-radius: 5px;
+}
+
+.Calendar__Month:hover {
+	cursor: pointer;
+}
+
+.Calendar__Days__Day {
+	font-weight: 600;
+	padding: calc(var(--padding) / 3) 5px;
+}
+
+.Calendar__Days__Day:first-child {
+	color: var(--sun-col-color);
+}
+
+/* Calendar Dates */
+
+.Calendar__DatesWrapper {
+	height: calc(var(--day-box-size) * 6);
+	overflow: hidden;
+}
+
+.Calendar__DateWrapper__Inner {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	height: 200%;
+}
+
+.Calendar__Dates {
+	flex: 1;
+
+	display: grid;
+	justify-items: center;
+	grid-template-columns: repeat(7, auto);
+}
+
+.Calendar__Dates__Date {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: var(--day-box-size);
+	height: var(--day-box-size);
+
+	font-size: 90%;
+
+	transition: 0.25s;
+}
+
+.Calendar__Dates__Date:not(.Disabled):hover {
+	cursor: pointer;
+	background-color: var(--bg-color);
+	border-radius: 2.5px;
+}
+
+.Calendar__Dates__Date:nth-child(7n - 6) {
+	color: var(--sun-col-color);
+}
+
+/*Months*/
+.Calendar__Months {
+	flex: 1;
+
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax(70px, 1fr));
+	justify-content: center;
+
+	text-align: center;
+}
+
+.Calendar__Months__Month {
+	font-size: 90%;
+	transition: 0.3s ease-in-out;
+}
+
+.Calendar__Months__Month:hover {
+	cursor: pointer;
+	background-color: var(--bg-color);
+}
+
+.Calendar__DateWrapper__Inner {
+	transition: 0.3s ease-in-out;
+}
+
+.Calendar__DateWrapper__Inner.Month {
+	margin-top: -65%;
+}

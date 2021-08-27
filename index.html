@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Date Picker</title>
+	<!-- box icons cdn -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- custom styles -->
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+	<section class="Calendar">
+		<div class="Calendar__Wrapper">
+			<!-- Header -->
+			<header class="Calendar__Header">
+				<div class="Calendar__Month"><span id="Calendar__Month"></span>&nbsp;<span id="date"></span></div>
+				<div class="Calendar__Year">
+					<button class="YearControlBtn" id="YearControlBtn--Prev">
+						<i class="bx bx-chevron-left"></i>
+					</button>
+					<div class="Calendar__Year__Value" id="Calendar__Year__Value">2021</div>
+					<button class="YearControlBtn" id="YearControlBtn--Next">
+						<i class="bx bx-chevron-right"></i>
+					</button>
+				</div>
+			</header>
+			<!-- End of Header -->
+
+			<!-- Days of the week -->
+			<section class="Calendar__Days">
+				<div class="Calendar__Days__Day">Sun</div>
+				<div class="Calendar__Days__Day">Mon</div>
+				<div class="Calendar__Days__Day">Tue</div>
+				<div class="Calendar__Days__Day">Wed</div>
+				<div class="Calendar__Days__Day">Thurs</div>
+				<div class="Calendar__Days__Day">Fri</div>
+				<div class="Calendar__Days__Day">Sat</div>
+			</section>
+			<!-- End of Days of the week -->
+
+			<section class="Calendar__DatesWrapper">
+				<div class="Calendar__DateWrapper__Inner">
+					<!-- Dates of the month -->
+					<div class="Calendar__Dates" id="Calendar__Dates"></div>
+					<!-- End of Dates of the month -->
+
+					<!-- Months of Year-->
+					<div class="Calendar__Months"></div>
+					<!-- End of Months of Year-->
+				</div>
+			</section>
+		</div>
+	</section>
+
+	<script type="text/javascript" src="./calendar.js"></script>
+</body>
+</html>
